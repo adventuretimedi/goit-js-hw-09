@@ -1,6 +1,7 @@
 const startBtn = document.querySelector('button[data-start]');
 const stopBtn = document.querySelector('button[data-stop]');
 const body = document.querySelector('body');
+const cat = document.querySelector('.giphy-cat');
 let intarvalId = null;
 
 // генерування випадкового кольору використовуй функцію
@@ -10,20 +11,20 @@ function getRandomHexColor() {
 
 // керування кнопками-перемикачами
 
-function changeBtnColor (e) {
-    intarvalId = setInterval(() => {
-        startBtn.disabled = true;
-        body.style.backgroundColor = getRandomHexColor();
-        console.log(`Time for color-party 😃 ${body.style.backgroundColor}`);
-    }, 1000);
-};
+function changeColor(e) {
+  intarvalId = setInterval(() => {
+    startBtn.disabled = true;
+    cat.classList.remove('is-hidden');
+    body.style.backgroundColor = getRandomHexColor();
+    console.log(`Time for color-party 😃 ${body.style.backgroundColor}`);
+  }, 1000);
+}
 //лісенер на клік + ф + дісейблед
-startBtn.addEventListener("click", changeBtnColor);
+startBtn.addEventListener('click', changeColor);
 
-stopBtn.addEventListener("click", () => {
+stopBtn.addEventListener('click', () => {
   startBtn.disabled = false;
+  cat.classList.add('is-hidden');
   clearInterval(intarvalId);
   console.log(`Your color - ${intarvalId} .Party is over!🙃`);
 });
-
-
