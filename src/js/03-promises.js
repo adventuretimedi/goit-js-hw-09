@@ -24,7 +24,7 @@ function checkPromise(e) {
   let step = Number(form.step.value);
   let amount = Number(form.amount.value);
   console.log(delay, step, amount);
-  for (let position = 0; position <= amount; position++) {
+  for (let position = 1; position <= amount; position++) {
     createPromise(position, delay)
       .then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);

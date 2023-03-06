@@ -63,7 +63,7 @@ flatpickr(input, options);
 function updateTimer() {
   const now = new Date();
   const diff = selectedDate.getTime() - now.getTime();
-  if (diff > 0) {
+  if (diff >= 0) {
     const remaining = convertMs(diff);
     timerRefs.days.textContent = addLeadingZero(remaining.days);
     timerRefs.hours.textContent = addLeadingZero(remaining.hours);
@@ -71,10 +71,6 @@ function updateTimer() {
     timerRefs.seconds.textContent = addLeadingZero(remaining.seconds);
   } else {
     clearInterval(timerId);
-    timerRefs.days.textContent = addLeadingZero(0);
-    timerRefs.hours.textContent = addLeadingZero(0);
-    timerRefs.minutes.textContent = addLeadingZero(0);
-    timerRefs.seconds.textContent = addLeadingZero(0);
     console.log('Timer has finished!');
   }
 }
