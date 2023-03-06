@@ -5,9 +5,9 @@ const cat = document.querySelector('.giphy-cat');
 const catSong = new Audio('https://now.morsmusic.org/load/1528392161/Nyan_Cat_-_Nyan_Cat_Theme_(musmore.com).mp3');
 let intarvalId = null;
 
-cat.classList.remove('is-hidden');
-cat.classList.add('is-hidden');
-catSong.play();
+// cat.classList.remove('is-hidden');
+// cat.classList.add('is-hidden');
+// catSong.play();
 
 // генерування випадкового кольору використовуй функцію
 function getRandomHexColor() {
@@ -16,9 +16,9 @@ function getRandomHexColor() {
 
 // керування кнопками-перемикачами
 function changeColor(e) {
-  // catSong.play();
+  catSong.play();
   startBtn.disabled = true;
-  // cat.classList.remove('is-hidden');
+  cat.classList.remove('is-hidden');
   
   intarvalId = setInterval(() => {
     body.style.backgroundColor = getRandomHexColor();
@@ -30,7 +30,7 @@ startBtn.addEventListener('click', changeColor);
 
 stopBtn.addEventListener('click', () => {
   startBtn.disabled = false;
-  // cat.classList.add('is-hidden');
+  cat.classList.add('is-hidden');
   catSong.pause();
   clearInterval(intarvalId);
   console.log(`Your color - ${intarvalId} .Party is over!🙃`);
