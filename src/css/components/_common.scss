@@ -1,0 +1,149 @@
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.box {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom: 15px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-css {
+  display: block;
+  text-align: center;
+  padding: 6px 22px;
+  margin-top: 30px;
+
+  border: 1px solid black;
+  border-radius: 4px;
+
+  background-color: #ffff;
+}
+
+.button-css:hover,
+.button-css:focus {
+  color: #fafafa;
+  background-color: rgb(58, 139, 231);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.value {
+  font-weight: 700;
+  font-size: large;
+}
+
+a {
+  text-decoration-line: none;
+  text-decoration: none;
+  color: #212121;
+}
+
+.button-style {
+  margin: auto;
+  border: none;
+  border-radius: 4px;
+  padding: 6px;
+  color: #fafafa;
+  background-color: rgb(12, 86, 133);
+
+  cursor: pointer;
+}
+
+.input-style {
+  margin-bottom: 10px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  font-size: 20px;
+  width: 100%;
+  height: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// CATTT
+.cat-thumb {
+  margin-top: 40px;
+  @include desktop {
+    margin-top: 120px;
+  }
+}
+.btn-thumb {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  @include desktop {
+    display: flex;
+    gap: 15px;
+  }
+}
+.button-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1.75;
+  height: 39px;
+  max-width: 100px;
+  border: none;
+  border-radius: 4px;
+  color: #fafafa;
+  background-color: black;
+
+  @include desktop {
+    display: flex;
+    gap: 16px;
+    height: 48px;
+    color: #fafafa;
+    background-color: black;
+    cursor: pointer;
+  }
+}
+
+body {
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+/* cat */
+.giphy-cat {
+  position: relative;
+  width: auto;
+  transform: translateX(-10px);
+  pointer-events: none;
+
+  @include desktop {
+    position: relative;
+    transform: translatex(-10px);
+    transition-duration: 1000ms;
+    transition-timing-function: linear;
+    transition-property: transform;
+    pointer-events: none;
+  }
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
